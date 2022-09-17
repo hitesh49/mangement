@@ -5,18 +5,36 @@ import { useState } from "react";
 import Swal from "sweetalert";
 
 const Add = ({ employees, setIsAdding, setEmployees }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [salary, setSalary] = useState("");
-  const [date, setDate] = useState("");
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    salary: "",
+    date: "",
+  });
+  // useref
   const textfirst = useRef(null);
   useEffect(() => {
     textfirst.current.focus();
   }, []);
+  // handleinput field//
+  const handleInput = (e) => {
+    const namee = e.target.name;
+    const value = e.target.value;
+    setFormData((prev) => {
+      return { ...prev, [namee]: value };
+    });
+  };
   const handleAdd = (e) => {
     e.preventDefault();
-    if (!firstName || !lastName || !email || !salary || !date) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.salary ||
+      !formData.date
+    ) {
       return Swal({
         icon: "error",
         title: "Error!",
@@ -28,11 +46,11 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
     const id = employees.length + 1;
     const newEmpolyee = {
       id,
-      firstName,
-      lastName,
-      email,
-      salary,
-      date,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      salary: formData.salary,
+      date: formData.date,
     };
     employees.push(newEmpolyee);
     setEmployees(employees);
@@ -40,14 +58,14 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
     Swal({
       icon: "success",
       title: "Added!",
-      text: `${firstName}${lastName} data has been Added.`,
+      text: `${formData.firstName}${formData.lastName} data has been Added.`,
       showConfirmButton: false,
       timer: 1500,
     });
   };
 
   return (
-    <div className="container">
+    <div className="container align-center">
       <form onSubmit={handleAdd}>
         <h1>Add Employee</h1>
         <div className="mb-3">
@@ -59,9 +77,10 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
             className="form-control"
             id="exampleInputFirstName"
             aria-describedby="emailHelp"
+            name="firstName"
             ref={textfirst}
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={formData.firstName}
+            onChange={handleInput}
           />
         </div>
         <div className="mb-3">
@@ -72,8 +91,9 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
             type="text"
             className="form-control"
             id="exampleInputLastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleInput}
           />
         </div>
         <div className="mb-3">
@@ -84,8 +104,9 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
             type="email"
             className="form-control"
             id="exampleInputEmail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={formData.email}
+            onChange={handleInput}
           />
         </div>
         <div className="mb-3">
@@ -96,8 +117,9 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
             type="number"
             className="form-control"
             id="exampleInputSalary"
-            value={salary}
-            onChange={(e) => setSalary(e.target.value)}
+            name="salary"
+            value={formData.salary}
+            onChange={handleInput}
           />
         </div>
         <div className="mb-3">
@@ -107,13 +129,14 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
           <input
             type="date"
             className="form-control"
+            name="date"
             id="exampleInputDate"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={formData.date}
+            onChange={handleInput}
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary me-2">
           Submit
         </button>
         <button className="btn btn-success" onClick={() => setIsAdding(false)}>

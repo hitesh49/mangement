@@ -10,13 +10,13 @@ const List = ({ employees, handleEdit, handleDelete }) => {
     <div>
       <table className="table table-striped table-hover">
         <thead>
-          <tr>
+          <tr className="text-center">
             <th scope="col">NO</th>
             <th scope="col">First Name </th>
             <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
+            <th scope="col" className="text-center">Email</th>
             <th scope="col">Salary</th>
-            <th scope="col">Date</th>
+            <th scope="col" className="text-center">Date</th>
             <th colSpan="2" className="text-center">
               Actions
             </th>
@@ -27,17 +27,17 @@ const List = ({ employees, handleEdit, handleDelete }) => {
             employees.map((value, i) => {
               return (
                 <>
-                  <tr key={value.id}>
+                  <tr key={value.id} className="text-center fw-bold">
                     <th scope="row">{i + 1}</th>
                     <td>{value.firstName}</td>
                     <td>{value.lastName}</td>
-                    <td>{value.email}</td>
+                    <td className="text-center">{value.email}</td>
                     <td>{formatter.format(value.salary)}</td>
-                    <td>{value.date}</td>
-                    <td>
+                    <td className="text-center">{value.date}</td>
+                    <td className="text-center">
                       <button onClick={()=>{handleEdit(value.id)}} className="btn btn-info">Edit</button>
                     </td>
-                    <td>
+                    <td className="text-center">
                       <button onClick={()=>{handleDelete(value.id)}} className="btn btn-danger">Delete</button>
                     </td>
                   </tr>
