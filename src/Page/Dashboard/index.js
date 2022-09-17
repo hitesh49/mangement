@@ -20,6 +20,12 @@ const Dashboard = () => {
   const handleDelete = (id) => {
     const newList = employees.filter((value) => value.id !== id);
     setEmployees(newList);
+    swal({
+      icon:"success",
+      title:"Delete",
+      text:"item has been deleted",
+      timer:1500
+    })
   };
   return (
     <div className="container">

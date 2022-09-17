@@ -28,11 +28,20 @@ const Edit = ({ employees, setEmployees, setIsEditing, selectedEmployee }) => {
     };
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].id === id) {
+        console.log(employees[i].id)
         employees.splice(i, 1, employee);
       }
     }
     setEmployees(employees);
     setIsEditing(false);
+    Swal({
+      icon:"success",
+      title:"Edit",
+      text:"Value has been changed",
+      showConfirmButton: true
+    }
+     
+    )
   };
   return (
     <div>

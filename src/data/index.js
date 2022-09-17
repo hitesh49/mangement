@@ -5,7 +5,7 @@ const employeesData = [
     lastName: "sharma",
     email: "mikal@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const employeesData = [
     lastName: "singh",
     email: "singh@gmail.com",
     salary: "2000",
-    date: "20-01-2004",
+    date: "2022-09-12",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const employeesData = [
     lastName: "dawan",
     email: "dawan@gmail.com",
     salary: "3200",
-    date: "19-01-2006",
+    date: "2022-09-12",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const employeesData = [
     lastName: "thakur",
     email: "thakur@gmail.com",
     salary: "2500",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const employeesData = [
     lastName: "yadav",
     email: "yadav@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const employeesData = [
     lastName: "sharma",
     email: "mikal@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const employeesData = [
     lastName: "sharma",
     email: "mikal@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const employeesData = [
     lastName: "sharma",
     email: "mikal@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ const employeesData = [
     lastName: "sharma",
     email: "mikal@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ const employeesData = [
     lastName: "sharma",
     email: "mikal@gmail.com",
     salary: "5000",
-    date: "20-01-2001",
+    date: "2022-09-12",
   },
 ];
 export {employeesData}

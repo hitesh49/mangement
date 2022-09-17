@@ -25,16 +25,26 @@ const List = ({ employees, handleEdit, handleDelete }) => {
         <tbody>
           {employees.length > 0 ? (
             employees.map((value, i) => {
+              const {firstName,lastName,email,salary,date} =value
               return (
                 <>
                   <tr key={value.id} className="text-center fw-bold">
                     <th scope="row">{i + 1}</th>
+<<<<<<< Updated upstream
                     <td>{value.firstName}</td>
                     <td>{value.lastName}</td>
                     <td className="text-center">{value.email}</td>
                     <td>{formatter.format(value.salary)}</td>
                     <td className="text-center">{value.date}</td>
                     <td className="text-center">
+=======
+                    <td>{firstName}</td>
+                    <td>{lastName}</td>
+                    <td>{email}</td>
+                    <td>{formatter.format(salary)}</td>
+                    <td>{date}</td>
+                    <td>
+>>>>>>> Stashed changes
                       <button onClick={()=>{handleEdit(value.id)}} className="btn btn-info">Edit</button>
                     </td>
                     <td className="text-center">

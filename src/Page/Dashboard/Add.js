@@ -60,7 +60,7 @@ const Add = ({ employees, setIsAdding, setEmployees }) => {
       title: "Added!",
       text: `${formData.firstName}${formData.lastName} data has been Added.`,
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2000,
     });
   };
 
